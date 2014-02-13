@@ -286,4 +286,37 @@ class Company extends Model
         }
         return $this->rest->get("projects/$project_id/$this->action");
     }
+
+    /**
+     * Add a company
+     * POST /companies
+     * Creates a new user account
+     *
+     * @param array $data
+     * @return int
+     */
+    public function insert(array $data)
+    {
+
+        /*
+
+        <company>
+            <name>{Company Name}</name>
+            <address_one>{Address Line 2}</address_one>
+            <address_two>{Address Line 2}</address_two>
+            <zip>{Zip Code}</zip>
+            <city>{City}</city>
+            <state>{State}</state>
+            <countrycode>{2-digit county code}</countrycode>
+            <phone>{Company Phone Number}</phone>
+            <fax>{Company Fax Number}</fax>
+            <web-address>{Companies Web Site Address}</web-address>
+        </company>
+
+     */
+        
+        $company_id = $this->rest->post("companies", $data)
+        return $company_id;
+
+    }
 }

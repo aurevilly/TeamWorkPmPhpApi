@@ -134,12 +134,23 @@ class JSON extends Model
     protected static function camelizeObject($source)
     {
         $destination = new \stdClass();
-        foreach ($source as $key=>$value) {
-            $key = self::camelize($key);
-            $destination->$key = is_scalar($value) ?
-                                        $value : self::camelizeObject($value);
+
+        if(is_array($source)){
+            foreach ($source as $key=>$value) {
+                $key = self::camelize($key);
+                $destination->$key = is_scalar($value) ?
+                                            $value : self::camelizeObject($value);
+            }
+
+            return $destination;
         }
-        return $destination;
+
+        $errors = $this->getJsonErrors();
+
+        throw new \TeamWorkPm\Exception(array(
+            'Message'  => $errors,
+         ));
+       
     }
 
     /**
