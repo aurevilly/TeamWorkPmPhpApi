@@ -135,22 +135,17 @@ class JSON extends Model
     {
         $destination = new \stdClass();
 
-        if(is_array($source)){
+        if( is_array($source) || is_object($source)){
+
             foreach ($source as $key=>$value) {
                 $key = self::camelize($key);
                 $destination->$key = is_scalar($value) ?
                                             $value : self::camelizeObject($value);
             }
-
-            return $destination;
         }
-
-        $errors = $this->getJsonErrors();
-
-        throw new \TeamWorkPm\Exception(array(
-            'Message'  => $errors,
-         ));
-       
+        
+        return $destination;
+        
     }
 
     /**
