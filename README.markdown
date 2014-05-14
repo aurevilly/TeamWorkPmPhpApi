@@ -1,11 +1,5 @@
 TeamWorkPm PHP Api
-==================  
-  Require php 5.3 +
-
-Installation
-------------
-  $ git clone git://github.com/loduis/TeamWorkPmPhpApi.git TeamWorkPm
-
+==================
 
 Using Api
 ---------
