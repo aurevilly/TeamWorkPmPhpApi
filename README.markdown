@@ -1,8 +1,11 @@
 TeamWorkPm PHP Api
 ==================
-
+  
   Require php 5.3 +
 
+Modification
+------------
+Readme modification
 Installation
 ------------
 
