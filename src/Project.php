@@ -167,4 +167,24 @@ class Project extends Model
         $data['status'] = 'archived';
         return $this->update($data);
     }
+
+    /**
+     * Shortcut for active project
+     *
+     * @param type $id
+     * @return bool
+     */
+    public function active($id)
+    {
+        $id = (int) $id;
+        if ($id <= 0) {
+            throw new Exception('Invalid param id');
+        }
+        $data = array();
+        $data['id'] = $id;
+        $data['status'] = 'active';
+        return $this->update($data);
+    }
+
+
 }
