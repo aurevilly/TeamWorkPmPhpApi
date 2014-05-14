@@ -101,16 +101,6 @@ class JSON extends Model
     protected static function camelizeObject($source)
     {
         $destination = new \stdClass();
-<<<<<<< HEAD:Response/JSON.php
-
-        if( is_array($source) || is_object($source)){
-
-            foreach ($source as $key=>$value) {
-                $key = self::camelize($key);
-                $destination->$key = is_scalar($value) ?
-                                            $value : self::camelizeObject($value);
-            }
-=======
         foreach ($source as $key=>$value) {
             if (ctype_upper($key)) {
                 $key = strtolower($key);
@@ -118,11 +108,8 @@ class JSON extends Model
             $key = Str::camel($key);
             $destination->$key = is_scalar($value) ?
                                         $value : self::camelizeObject($value);
->>>>>>> upstream/master:src/Response/JSON.php
         }
-        
         return $destination;
-        
     }
 
     /**

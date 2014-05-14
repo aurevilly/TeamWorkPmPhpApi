@@ -1,18 +1,11 @@
 TeamWorkPm PHP Api
-==================
-<<<<<<< HEAD
-  
+==================  
   Require php 5.3 +
 
-Modification
-------------
-Readme modification
 Installation
 ------------
+  $ git clone git://github.com/loduis/TeamWorkPmPhpApi.git TeamWorkPm
 
-    $ git clone git://github.com/loduis/TeamWorkPmPhpApi.git TeamWorkPm
-=======
->>>>>>> upstream/master
 
 Using Api
 ---------
